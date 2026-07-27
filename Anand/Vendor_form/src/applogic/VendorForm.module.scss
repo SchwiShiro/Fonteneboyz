@@ -1,0 +1,1020 @@
+:global(:root) {
+  --navy: #1b4f8a;
+  --accent: #2e7bc4;
+  --border: #d7dee5;
+  --bg: #f2f4f6;
+  --surface: #e8ecf0;
+  --text: #1a1f2e;
+  --text-muted: #4b5a75;
+  --radius: 18px;
+  --radius-sm: 12px;
+}
+
+.page {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.formHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 1.5rem;
+  padding: 2rem 2.25rem;
+  background: linear-gradient(135deg, #1b4f8a 0%, #2e7bc4 100%);
+  color: white;
+}
+
+.overline {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 2.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.description {
+  margin-top: 1rem;
+  max-width: 44rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.headerFields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.headerField {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.headerField span {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.headerInput {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  padding: 0.75rem 0.95rem;
+  font-size: 0.95rem;
+}
+
+.headerInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.headerInput:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+@media (max-width: 720px) {
+  .headerFields {
+    grid-template-columns: 1fr;
+  }
+}
+
+.summaryPanel {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.summaryLabel {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.summaryText {
+  margin: 0;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.96rem;
+}
+
+.tableSection {
+  padding: 2rem;
+}
+
+.criteriaTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.85rem;
+}
+
+.criteriaTable thead tr {
+  background: transparent;
+}
+
+.criteriaTable th {
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 1rem 1rem 0.75rem;
+  text-align: left;
+  color: var(--text-muted);
+}
+
+.categoryHeader {
+  width: 28%;
+}
+
+.weightHeader,
+.ratingHeader,
+.scoreHeader {
+  width: auto;
+  white-space: nowrap;
+}
+
+.weightHeader {
+  width: 10%;
+}
+
+.ratingHeader {
+  width: 4.5%;
+}
+
+.scoreHeader {
+  width: 7%;
+}
+
+.criteriaHeader {
+  width: 46%;
+}
+
+.tableRow {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+.tableRow td {
+  padding: 1rem;
+  vertical-align: top;
+}
+
+.formActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 2rem 1rem;
+}
+
+.weightSummary {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.inputGroup {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.fieldLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.tableInput,
+.criteriaInput,
+.weightInput {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  padding: 0.35rem 1rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.weightInput {
+  max-width: 100px;
+}
+
+.criteriaList {
+  margin-top: 0.75rem;
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.criteriaItem {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.removeButton,
+.addButton,
+.smallButton {
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.removeButton {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.85rem;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.removeButton:hover,
+.addButton:hover,
+.smallButton:hover {
+  color: var(--navy);
+}
+
+.addButton {
+  padding: 0.7rem 0.95rem;
+  border: 1px solid rgba(46, 123, 196, 0.22);
+  border-radius: 0.85rem;
+  background: var(--bg);
+}
+
+.categoryControls {
+  margin-top: 0.5rem;
+}
+
+.smallButton {
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgba(46, 123, 196, 0.2);
+  border-radius: 0.85rem;
+  background: var(--bg);
+}
+
+.catName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.catSub {
+  margin-top: 0.3rem;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.criteriaList {
+  margin-top: 0.75rem;
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.criteriaList li {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.criteriaList li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.95rem;
+  line-height: 1;
+  top: 0.1rem;
+}
+
+.weightCell,
+.weightedCell,
+.ratingCell {
+  text-align: center;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.weightCell {
+  font-size: 0.92rem;
+  width: 6.5rem;
+}
+
+.ratingCell {
+  width: 4.5rem;
+}
+
+.weightedCell {
+  font-size: 1rem;
+  width: 6rem;
+}
+
+.starGroup {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.star {
+  font-size: 0.85rem;
+  color: var(--border);
+  border-radius: 999px;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(27, 79, 138, 0.08);
+  transition:
+    transform 0.15s ease,
+    color 0.15s ease,
+    background 0.15s ease;
+  border: none;
+}
+
+.star:hover {
+  transform: scale(1.05);
+  background: rgba(46, 123, 196, 0.18);
+}
+
+.active {
+  color: var(--accent);
+}
+
+.detailsRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 2rem 2rem;
+}
+
+.scoreCard {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+}
+
+.scoreSummaryRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.scoreSummaryMain {
+  min-width: 220px;
+  flex: 1 1 320px;
+}
+
+.scoreLabel {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.totalScore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--navy);
+  font-family: "DM Serif Display", serif;
+}
+
+.totalValue {
+  display: block;
+}
+
+.levelChartInline {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.levelListInline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.levelItemInline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  padding: 0.45rem 0.6rem;
+  background: white;
+  border: 1px solid rgba(46, 123, 196, 0.18);
+  border-radius: 0.75rem;
+}
+
+.levelItemInline .levelName {
+  font-size: 0.72rem;
+}
+
+.levelItemInline .levelRange {
+  font-size: 0.72rem;
+}
+
+.levelItemInline .levelName {
+  font-size: 0.78rem;
+}
+
+.levelItemInline .levelRange {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.levelChartInline .chartTitle {
+  margin: 0 0 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.totalSuffix {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-left: 0.35rem;
+}
+
+.levelBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.levelChart {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.25rem 1.1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+.chartTitle {
+  margin: 0 0 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.levelList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.levelItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  background: white;
+  border: 1px solid rgba(46, 123, 196, 0.18);
+  border-radius: 0.85rem;
+}
+
+.levelName {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.levelRange {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.activeLevelA {
+  background: rgba(22, 163, 74, 0.14);
+  border-color: rgba(22, 163, 74, 0.35);
+}
+
+.activeLevelB {
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.activeLevelC {
+  background: rgba(217, 119, 6, 0.14);
+  border-color: rgba(217, 119, 6, 0.35);
+}
+
+.activeLevelD {
+  background: rgba(185, 28, 28, 0.14);
+  border-color: rgba(185, 28, 28, 0.35);
+}
+
+.levelA {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.levelB {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.levelC {
+  color: #c2410c;
+  background: #ffedd5;
+}
+
+.levelD {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.incomplete {
+  color: var(--text-muted);
+  background: var(--bg);
+}
+
+.totalSuffix {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-left: 0.35rem;
+}
+
+.instructions {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+}
+
+.instructionsTitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.instructionsSections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.instructionsSection {
+  flex: 1 1 220px;
+  min-width: 200px;
+  border: 1px solid transparent;
+  border-radius: 0.9rem;
+  padding: 0.85rem;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.instructionsSectionTitle {
+  margin: 0 0 0.3rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.subSection {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  border: 1px solid transparent;
+  border-radius: 0.9rem;
+}
+
+.subSectionTitle {
+  margin: 0 0 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.assessmentLevelList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.assessmentLevelItem {
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 0.8rem;
+  padding: 0.75rem;
+  background: white;
+  min-height: 90px;
+}
+
+.compactCriteriaCard {
+  padding: 0.65rem;
+}
+
+.assessmentLevelHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.assessmentLevelName {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--navy);
+}
+
+.assessmentLevelBadge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: white;
+  border-radius: 999px;
+  padding: 0.12rem 0.55rem;
+}
+
+.assessmentLevelRange {
+  margin: 0 0 0.15rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.instructionsText {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+@media (max-width: 920px) {
+  .assessmentLevelList {
+    grid-template-columns: 1fr;
+  }
+}
+
+.highlightLevelA {
+  background: rgba(22, 163, 74, 0.12);
+  border-color: rgba(22, 163, 74, 0.35);
+}
+
+.highlightLevelA .assessmentLevelBadge {
+  background: #16a34a;
+}
+
+.highlightLevelA .assessmentLevelName {
+  color: #166534;
+}
+
+.highlightLevelB {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.highlightLevelB .assessmentLevelBadge {
+  background: #d97706;
+}
+
+.highlightLevelB .assessmentLevelName {
+  color: #92400e;
+}
+
+.highlightLevelC {
+  background: rgba(217, 119, 6, 0.12);
+  border-color: rgba(217, 119, 6, 0.35);
+}
+
+.highlightLevelC .assessmentLevelBadge {
+  background: #ea580c;
+}
+
+.highlightLevelC .assessmentLevelName {
+  color: #c2410c;
+}
+
+.highlightLevelD {
+  background: rgba(185, 28, 28, 0.12);
+  border-color: rgba(185, 28, 28, 0.35);
+}
+
+.highlightLevelD .assessmentLevelBadge {
+  background: #b91c1c;
+}
+
+.highlightLevelD .assessmentLevelName {
+  color: #991b1b;
+}
+
+.highlightLevelE {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+.highlightLevelE .assessmentLevelBadge,
+.highlightLevelE .assessmentLevelBadgeSmall {
+  background: #7c3aed;
+}
+
+.highlightLevelE .assessmentLevelName {
+  color: #6d28d9;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 0 2rem 2rem;
+}
+
+.btn {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 0.95rem 1.7rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btnReset {
+  background: var(--bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btnPrimary {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+  box-shadow: 0 14px 30px rgba(27, 79, 138, 0.18);
+  margin-top: 1em;
+}
+
+.btnPrimary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btnOutline {
+  background: var(--accent);
+  color: white;
+}
+
+.btnOutline:hover {
+  background: var(--navy);
+}
+
+@media (max-width: 900px) {
+  .formHeader,
+  .detailsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    justify-content: stretch;
+    flex-direction: column;
+  }
+}
+
+@media print {
+  @page {
+    size: auto;
+    margin: 10mm;
+  }
+
+  html,
+  body,
+  #root {
+    width: auto;
+    min-height: auto;
+    background: white;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav,
+  main,
+  .page {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+    break-inside: avoid-page;
+  }
+
+  nav {
+    page-break-after: avoid;
+  }
+
+  .page {
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+    width: auto;
+  }
+
+  .formHeader,
+  .detailsRow {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0.75rem;
+  }
+
+  .formHeader,
+  .tableSection,
+  .scoreCard,
+  .instructionsSection {
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+    break-inside: avoid-page;
+  }
+
+  .instructionsSections {
+    flex-wrap: nowrap !important;
+    gap: 0.5rem !important;
+  }
+
+  .instructionsSection {
+    flex: 1 1 45% !important;
+    min-width: 180px !important;
+    padding: 0.85rem !important;
+  }
+
+  .assessmentLevelList {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.4rem !important;
+  }
+
+  .assessmentLevelItem {
+    padding: 0.7rem !important;
+    min-height: auto !important;
+  }
+
+  .subSection {
+    margin-top: 0.5rem !important;
+    padding-top: 0.5rem !important;
+  }
+
+  .formHeader {
+    page-break-after: avoid;
+    break-after: avoid-page;
+  }
+
+  .tableSection {
+    padding: 0.75rem !important;
+  }
+
+  .tableRow,
+  .criteriaTable,
+  .levelChart,
+  .scoreCard {
+    page-break-inside: avoid;
+  }
+
+  html,
+  body,
+  #root {
+    font-size: clamp(10px, 1.2vw, 13px) !important;
+  }
+
+  .criteriaTable {
+    width: 100% !important;
+    table-layout: auto !important;
+    max-width: 100% !important;
+    font-size: clamp(0.8rem, 0.95vw, 1rem) !important;
+  }
+
+  .criteriaTable th,
+  .criteriaTable td {
+    padding: 0.65rem 0.5rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .criteriaTable th {
+    font-size: clamp(0.75rem, 0.85vw, 0.9rem) !important;
+  }
+
+  .criteriaTable td {
+    font-size: clamp(0.8rem, 0.9vw, 0.95rem) !important;
+  }
+
+  .instructionsTitle,
+  .instructionsSectionTitle,
+  .subSectionTitle,
+  .levelName,
+  .levelRange,
+  .assessmentLevelRange,
+  .instructionsText,
+  .assessmentLevelBadge {
+    font-size: clamp(0.65rem, 0.9vw, 0.88rem) !important;
+  }
+
+  .instructionsText {
+    line-height: 1.4 !important;
+  }
+
+  .categoryHeader,
+  .criteriaHeader,
+  .weightHeader,
+  .ratingHeader,
+  .scoreHeader {
+    width: auto !important;
+    min-width: 0 !important;
+  }
+
+  .tableRow td {
+    padding: 0.65rem !important;
+  }
+
+  .removeButton,
+  .addButton,
+  .smallButton,
+  .formActions,
+  .actions {
+    display: none !important;
+  }
+
+  .tableInput,
+  .criteriaInput,
+  .weightInput {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #000 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+
+  .criteriaList {
+    display: block;
+    gap: 0.5rem;
+  }
+
+  .criteriaItem {
+    display: block;
+    gap: 0;
+  }
+
+  .weightInput {
+    max-width: none;
+  }
+}
